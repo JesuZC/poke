@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders} from './app.routing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -29,7 +31,9 @@ import { LoadVariousComponent } from './components/load-various/load-various.com
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
