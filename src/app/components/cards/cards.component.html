@@ -1,0 +1,12 @@
+<div *ngIf="item?.ischarged">
+    <h2>{{'name: ' + item?.name}}</h2>
+    <h2>{{'id: ' + item?._id}}</h2>
+    <h2> types</h2>
+    <div *ngFor="let type of item?.types">
+        <h2>{{type.type.name}}</h2>
+    </div>
+    <div *ngFor="let img of item?.sprites">
+        <img [src]="img!">
+    </div>
+    <button>Look</button><button (click)="onBeFree()">Be Free!!</button>
+</div>
