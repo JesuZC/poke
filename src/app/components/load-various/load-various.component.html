@@ -1,1 +1,41 @@
 <p>load-various works!</p>
+<div *ngIf="tProfile?.ischarged">
+    <dir>
+        <h2 style=" color:antiquewhite;">{{"Type: "+tProfile?.name}}</h2>
+        <h2 style=" color:antiquewhite;">All moves...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let move of tProfile?.moves; let i = index">
+            <h2 style=" color:antiquewhite;">{{"move: "+(i+1)+": "+move?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">Relations...</h2>
+        <h2 style=" color:antiquewhite;">Double Damage From...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let relation of tProfile?.damage_relations?.double_damage_from; let i = index">
+            <h2 style=" color:antiquewhite;">{{"Type: "+(i+1)+": "+relation?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">Double Damage To...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let relation of tProfile?.damage_relations?.double_damage_to; let i = index">
+            <h2 style=" color:antiquewhite;">{{"Type: "+(i+1)+": "+relation?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">Half Damage From...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let relation of tProfile?.damage_relations?.half_damage_from; let i = index">
+            <h2 style=" color:antiquewhite;">{{"Type: "+(i+1)+": "+relation?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">Half Damage To...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let relation of tProfile?.damage_relations?.half_damage_to; let i = index">
+            <h2 style=" color:antiquewhite;">{{"Type: "+(i+1)+": "+relation?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">No Damage From...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let relation of tProfile?.damage_relations?.no_damage_from; let i = index">
+            <h2 style=" color:antiquewhite;">{{"Type: "+(i+1)+": "+relation?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">No Damage To...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let relation of tProfile?.damage_relations?.no_damage_to; let i = index">
+            <h2 style=" color:antiquewhite;">{{"Type: "+(i+1)+": "+relation?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">All pokemons...</h2>
+        <div style=" color:antiquewhite;" *ngFor="let pokemon of tProfile?.pokemon; let i = index">
+            <app-tinycards [pokemon]="pokemon"> </app-tinycards>
+            <!--             <h2 style=" color:antiquewhite;">{{"Pokemon: "+": "+pokemon?.pokemon?.name}}</h2>
+            <button>Ver</button> -->
+        </div>
+    </dir>
+</div>

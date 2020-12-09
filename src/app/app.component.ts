@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'poke';
+  valueResp(respuesta: string): void {
+    alert(respuesta);
+    console.log(respuesta);
+   }
 }

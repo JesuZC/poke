@@ -1,1 +1,25 @@
-<p>gallery works!</p>
+<div *ngIf=" pokemons !== null || pokemons !== []">
+    <div *ngFor="let item of pokemons; let i = index">
+        <app-cards [name]="item" (valueResponse)="valueResponse($event)"></app-cards>
+    </div>
+</div>
+<div>
+    <div *ngIf="pokemons === null || pokemons.length === 0">
+        <h1>
+            Your gallery is empty
+        </h1>
+    </div>
+</div>
+<!--
+<div>
+    <div (ngIf)="pokemons === null">
+        <h1>
+            Your gallery is empty
+        </h1>
+    </div>
+         <div (ngIf)=" pokemons !== null">s
+        <div *ngFor="let item of pokemons; let i = index">
+            <p>{{"pokemon"+item}}</p>
+        </div>
+    </div>
+</div> -->

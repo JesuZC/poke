@@ -1,1 +1,25 @@
-<p>load-one works!</p>
+<div *ngIf="pProfile?.ischarged">
+    <div>
+        <h2 style=" color:antiquewhite;">{{"name: "+pProfile?.name}}</h2>
+        <h2 style=" color:antiquewhite;">{{"id: "+pProfile?._id}}</h2>
+        <div style=" color:antiquewhite;" *ngFor="let type of pProfile?.types; let i = index">
+            <h2 style=" color:antiquewhite;">{{"type "+(i+1)+": "+type?.type?.name}}</h2>
+        </div>
+        <h2 style=" color:antiquewhite;">{{"weight: "+pProfile?.weight}}</h2>
+        <h2 style=" color:antiquewhite;">{{"height: "+pProfile?.height}}</h2>
+        <h2 style=" color:antiquewhite;">{{"base experience: "+pProfile?.base_experience}}</h2>
+        <div style=" color:antiquewhite;" *ngFor="let ability of pProfile?.abilities; let i = index">
+            <h2 style=" color:antiquewhite;">{{"ability "+(i+1)+": "+ability?.ability?.name}}</h2>
+        </div>
+    </div>
+    <div>
+        <img [src]="pProfile?.sprites?.front_default">
+        <img [src]="pProfile?.sprites?.back_default">
+        <p *ngIf="pProfile?.sprites?.front_default === null" style=" color:antiquewhite;">No image avalible!!</p>
+    </div>
+    <div>
+
+        <button (click)="onAddToGallery()">Capture</button>
+        <button (click)="onSeeGallery()">Go to Gallery</button>
+    </div>
+</div>
