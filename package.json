@@ -1,6 +1,6 @@
 {
-    "name": "pokemex",
-    "version": "0.1.0",
+    "name": "poke",
+    "version": "0.1.1",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
