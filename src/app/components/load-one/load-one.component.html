@@ -1,18 +1,35 @@
-<div *ngIf="pProfile?.ischarged">
+<div *ngIf="pProfile?.ischarged" class="load-uno">
     <div>
-        <h2 style=" color:antiquewhite;">{{"name: "+pProfile?.name}}</h2>
-        <h2 style=" color:antiquewhite;">{{"id: "+pProfile?._id}}</h2>
-        <div style=" color:antiquewhite;" *ngFor="let type of pProfile?.types; let i = index">
-            <h2 style=" color:antiquewhite;">{{"type "+(i+1)+": "+type?.type?.name}}</h2>
+        <h3>Name: </h3>
+        <h2>{{pProfile?.name}}</h2>
+        <h3>Id: </h3>
+        <h2>{{pProfile?._id}}</h2>
+        <div *ngFor="let type of pProfile?.types; let i = index">
+            <h3>{{"Type "+(i+1)+": "}}</h3>
+            <div class="one-type-container">
+                <h2>{{type?.type?.name}}</h2>
+                <img class="imgType" src={{type?.type.url}} alt={{type?.type.name}} width=12% height=12%>
+            </div>
         </div>
-        <h2 style=" color:antiquewhite;">{{"weight: "+pProfile?.weight}}</h2>
-        <h2 style=" color:antiquewhite;">{{"height: "+pProfile?.height}}</h2>
-        <h2 style=" color:antiquewhite;">{{"base experience: "+pProfile?.base_experience}}</h2>
-        <div style=" color:antiquewhite;" *ngFor="let ability of pProfile?.abilities; let i = index">
-            <h2 style=" color:antiquewhite;">{{"ability "+(i+1)+": "+ability?.ability?.name}}</h2>
+        <h3>Weight: </h3>
+        <h2>{{pProfile?.weight}}</h2>
+        <h3>Height: </h3>
+        <h2>{{pProfile?.height}}</h2>
+        <h3>Base Experience: </h3>
+        <h2>{{pProfile?.base_experience}}</h2>
+        <div *ngFor="let ability of pProfile?.abilities; let i = index">
+            <h3>{{"Ability "+(i+1)+": "}}</h3>
+            <h2>{{ability?.ability?.name}}</h2>
+        </div>
+        <h2 style="color: rgb(209, 96, 43); margin-top: 10%;">All moves...</h2>
+        <div class="moves-scroll">
+            <div *ngFor="let move of pProfile?.moves; let i = index">
+                <h3>{{"Move "+(i+1)+": " }}</h3>
+                <h2 style=" color:antiquewhite; text-align: center;">{{move.move?.name}}</h2>
+            </div>
         </div>
     </div>
-    <div>
+    <div class="load-uno-images">
         <img [src]="pProfile?.sprites?.front_default">
         <img [src]="pProfile?.sprites?.back_default">
         <p *ngIf="pProfile?.sprites?.front_default === null" style=" color:antiquewhite;">No image avalible!!</p>
@@ -20,6 +37,5 @@
     <div>
 
         <button (click)="onAddToGallery()">Capture</button>
-        <button (click)="onSeeGallery()">Go to Gallery</button>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit , Input} from '@angular/core';
+import { Router } from '@angular/router';
 import { LoadVariousService } from './../../services/loadVarious.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class TinycardsComponent implements OnInit {
   @Input () pokemon?: any;
   public resp: any;
   constructor(
+    private _router: Router,
     public _loadVariousService: LoadVariousService
   ) { }
 
@@ -27,28 +29,23 @@ export class TinycardsComponent implements OnInit {
       }
     });
   }
-  onSeeGallery(): void {
-    console.log('lets go to the Gallery');
-  }
   onAddToGallery(name: string): void {
-    console.log('lets add:  ' + name);
     let pokemons: any = localStorage.getItem('pokemonsGallery');
     pokemons = JSON.parse(pokemons);
-    console.log('all:  ' + pokemons);
     if(pokemons === null){
       pokemons = [ name, ];
       localStorage.setItem('pokemonsGallery', JSON.stringify(pokemons));
-      alert('se agrego: ' + name);
+      alert('It add\'s: ' + name);
     } else {
-      console.log("problem");
-      console.log(pokemons);
       const found = pokemons.includes( name );
       if (found)
-        return alert("este pokemon ya esta regustrado");
+        return alert("This pokemon is already registered");
       pokemons.push(name);
       localStorage.setItem('pokemonsGallery', JSON.stringify(pokemons));
-      alert('se agrego: ' + name);
-      console.log(pokemons);
+      alert('It add\'s: ' + name);
     }
+  }
+  onLook():void{
+    this._router.navigate(['/search',this.pokemon.pokemon.name]);
   }
 }

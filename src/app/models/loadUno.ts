@@ -7,6 +7,7 @@ export class LoadUno{
     public height: number,
     public base_experience: number,
     public abilities: any[],
+    public moves: any[],
     public sprites: any,
     public ischarged: boolean
   ){}

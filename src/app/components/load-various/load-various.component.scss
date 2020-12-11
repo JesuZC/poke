@@ -1,0 +1,328 @@
+.load-various {
+    text-align: justify;
+    border-radius: 8px;
+    position: sticky;
+}
+
+.moves-scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    padding-left: 0%;
+    background-color: rgb(21, 22, 26);
+    width: 500px;
+    height: 130px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    border-radius: 8px;
+    h3 {
+        padding-left: 13%;
+        color: rgb(230, 27, 27);
+    }
+}
+
+.relations-scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: rgb(21, 22, 26);
+    width: 500px;
+    height: 180px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    border-radius: 8px;
+    h1 {
+        color: aliceblue;
+    }
+    h3 {
+        padding-left: 13%;
+        color: rgb(230, 27, 27);
+    }
+}
+
+.tiny-cards-scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: rgb(21, 22, 26);
+    width: 500px;
+    height: 580px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    border-radius: 8px;
+    margin-bottom: 8%;
+    h1 {
+        color: aliceblue;
+    }
+    h3 {
+        padding-left: 13%;
+        color: rgb(230, 27, 27);
+    }
+}
+
+.message-for-slide {
+    display: none;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    display: none;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@media screen and (max-width: 575px) {
+    * {
+        box-sizing: border-box
+    }
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 100%;
+        margin: auto;
+        margin-top: 30%;
+        margin-bottom: 50%;
+        visibility: visible;
+        display: flex;
+        position: sticky;
+    }
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+        padding-left: 9%;
+    }
+    .message-for-slide {
+        display: inline;
+        color: brown;
+        margin-bottom: 4%;
+    }
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: rgba(243, 29, 136, 0.815);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    /* Caption text */
+    .text {
+        color: #ec3a8dd3;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #ff3ea8c9;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    .load-various {
+        width: 95%;
+        position: inherit;
+    }
+    .terminal {
+        padding-left: 2%;
+        width: 94%;
+        position: inherit;
+    }
+    .moves-scroll {
+        align-self: auto;
+        margin-left: 0%;
+        width: 100%;
+        align-self: auto;
+        width: auto;
+    }
+    .relations-scroll {
+        align-self: auto;
+        margin-left: 0%;
+        width: 100%;
+        align-self: auto;
+        width: auto;
+    }
+    .tiny-cards-scroll {
+        visibility: hidden;
+        display: none;
+        width: 100%;
+        height: 10;
+        margin: 1%, 1%;
+        padding: 1%;
+    }
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+}

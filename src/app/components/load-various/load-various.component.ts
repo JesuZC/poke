@@ -16,11 +16,14 @@ export class LoadVariousComponent implements OnInit {
   };
   @Output () valueResponse: EventEmitter<string> = new EventEmitter();
   status: number;
+  public ruteImgType?: string;
   tProfile?: LoadVarious;
+  public slideIndex: number;
   public resp: any;
   constructor(
     private _loadVariousService: LoadVariousService
   ) {
+    this.slideIndex = 1;
     this.status = 0;
     this.resp = {};
     this.type = {
@@ -29,22 +32,14 @@ export class LoadVariousComponent implements OnInit {
     };
   }
   ngOnInit(): void {
-    console.log(this._loadVariousService.pruebas());
-    this.resp = this._loadVariousService.getAll(this.type.looking).subscribe({
-      next: data => {
-        console.log(data);},
-      error: error => {
-          console.error('There was an error!', error);
-      }});
+      this.showSlides(this.slideIndex);
   }
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
     //Add 'implements DoCheck' to the class.
     if (this.type.continue === true){
-      console.log(typeof this.type , this.type);
       this.resp = this._loadVariousService.getType(this.type.looking).subscribe({
         next: data => {
-          console.log(data);
           this.type.continue = false;
           this.tProfile = {
             _id: data.id,
@@ -55,6 +50,7 @@ export class LoadVariousComponent implements OnInit {
             ischarged: true
           };
           this.valueResponse.emit(this.resp.name);
+          this.ruteImgType = "../../../assets/img/sys/elements/icons/"+this.tProfile.name+".png";
           this.status = 200;
         },
         error: error => {
@@ -65,7 +61,6 @@ export class LoadVariousComponent implements OnInit {
       this.type.continue = false;
     }
     if(typeof this.tProfile !== 'undefined' && this.status !== 0){
-      console.log(this.resp, this.tProfile);
       this.status = 0;
     }
   }
@@ -76,5 +71,30 @@ export class LoadVariousComponent implements OnInit {
       looking: 0,
       continue: false
     };
+  }
+  // Next/previous controls
+  plusSlides(n:number) {
+    this.showSlides(this.slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  currentSlide(n:number) {
+    this.showSlides(this.slideIndex = n);
+  }
+
+  showSlides(n:number) {
+    let i;
+    let slides:any = document.getElementsByClassName("mySlides");
+    let dots:any = document.getElementsByClassName("dot");
+    if (n > slides.length) {this.slideIndex = 1}
+    if (n < 1) {this.slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i]!.style!.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[this.slideIndex-1]!.style!.display = "block";
+    dots[this.slideIndex-1]!.className! += " active";
   }
 }

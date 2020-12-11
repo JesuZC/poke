@@ -17,6 +17,7 @@ import { LoadOneComponent } from './components/load-one/load-one.component';
 import { LoadVariousComponent } from './components/load-various/load-various.component';
 import { TinycardsComponent } from './components/tinycards/tinycards.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CardsComponent } from './components/cards/cards.component';
     LoadOneComponent,
     LoadVariousComponent,
     TinycardsComponent,
-    CardsComponent
+    CardsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

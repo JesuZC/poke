@@ -1,12 +1,10 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params} from '@angular/router';
-import { LoadUnoService } from "../../services/loadUno.service";
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
-  providers: [LoadUnoService]
+  styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
   @Output () valueResponse = new EventEmitter<string>();
@@ -14,15 +12,15 @@ export class SearchComponent implements OnInit {
     looking: string,
     continue: boolean
   };
+  private sub:any;
   public capture!: string;
   nombre: FormControl = new FormControl(this.capture , [
     Validators.required,
-    Validators.minLength(4),
+    Validators.minLength(2),
   ])
   constructor(
     private _route: ActivatedRoute,
-    private _router: Router,
-    private  LoadUnoService: LoadUnoService
+    private _router: Router
   ) {
   this.capture = '';
   this.query = {
@@ -32,11 +30,23 @@ export class SearchComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.sub = this._route.params.subscribe(params => {
+      if(typeof params.name !== 'undefined'){
+        this.query = {
+          looking: params.name,
+          continue: true
+        }
+      }
+    });
   };
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
   onSubmitName(): void {
     if (this.nombre.value === null || this.nombre.value === '') {
       alert("bring an pokemon name without special caracters");
       return;
+
     }
     const val: any = /[^ \.A-Za-z \-]/g.test(this.nombre.value?.trim());
     if (val){
@@ -50,8 +60,6 @@ export class SearchComponent implements OnInit {
     this.query.continue = true;
     this.capture = '';
     this.nombre.setValue('');
-    this.valueResponse.emit('saludos desde search!!');
-    console.log(this.query);
     return;
   };
   onSubmitID(): void {
