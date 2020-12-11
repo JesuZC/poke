@@ -1,4 +1,4 @@
-import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit , OnDestroy, Input, Output, EventEmitter} from '@angular/core';
 import { LoadVariousService } from './../../services/loadVarious.service';
 import { LoadVarious } from '../../models/loadVarious';
 
@@ -8,7 +8,7 @@ import { LoadVarious } from '../../models/loadVarious';
   styleUrls: ['./load-various.component.scss'],
   providers: [LoadVariousService]
 })
-export class LoadVariousComponent implements OnInit {
+export class LoadVariousComponent implements OnInit, OnDestroy{
 
   @Input() type: {
     looking: any,
@@ -32,7 +32,6 @@ export class LoadVariousComponent implements OnInit {
     };
   }
   ngOnInit(): void {
-      this.showSlides(this.slideIndex);
   }
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
@@ -49,9 +48,13 @@ export class LoadVariousComponent implements OnInit {
             damage_relations: data.damage_relations,
             ischarged: true
           };
-          this.valueResponse.emit(this.resp.name);
           this.ruteImgType = "../../../assets/img/sys/elements/icons/"+this.tProfile.name+".png";
           this.status = 200;
+          this.showSlides(this.slideIndex);
+          this.type = {
+            looking: 0,
+            continue: false
+          };
         },
         error: error => {
             console.error('There was an error!', error);

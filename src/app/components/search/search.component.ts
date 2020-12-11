@@ -12,6 +12,11 @@ export class SearchComponent implements OnInit {
     looking: string,
     continue: boolean
   };
+  public query2!: {
+    looking: string,
+    continue: boolean
+  };
+  public selection?: string;
   private sub:any;
   public capture!: string;
   nombre: FormControl = new FormControl(this.capture , [
@@ -26,6 +31,10 @@ export class SearchComponent implements OnInit {
   this.query = {
     looking: '',
     continue: false,
+  };
+  this.query2 = {
+    looking: '',
+    continue: false,
   }
   };
 
@@ -36,6 +45,7 @@ export class SearchComponent implements OnInit {
           looking: params.name,
           continue: true
         }
+        this.selection = 'component'
       }
     });
   };
@@ -86,22 +96,22 @@ export class SearchComponent implements OnInit {
   onSubmitType(): void {
     let val: any = this.capture;
     if ( val === ''){
-      this.query.looking = '';
-      this.query.continue = false;
+      this.query2.looking = '';
+      this.query2.continue = false;
       this.capture = '';
       alert('you need to bring an option');
       return;
     }
     val = Number.parseInt(val, 10);
     if ( val < 1 || val > 18){
-      this.query.looking = '';
-      this.query.continue = false;
+      this.query2.looking = '';
+      this.query2.continue = false;
       this.capture = '';
       alert('you need to chosse one of a brings options for types');
       return;
     }
-    this.query.looking = val;
-    this.query.continue = true;
+    this.query2.looking = val;
+    this.query2.continue = true;
     this.capture = '';
     return;
   };

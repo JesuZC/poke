@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnDestroy} from '@angular/core';
 import { LoadUnoService } from '../../services/loadUno.service';
 import { LoadUno } from './../../models/loadUno';
 @Component({
@@ -7,7 +7,7 @@ import { LoadUno } from './../../models/loadUno';
   styleUrls: ['./load-one.component.scss'],
   providers: [LoadUnoService]
 })
-export class LoadOneComponent implements OnInit {
+export class LoadOneComponent implements OnInit, OnDestroy {
   @Input() name: {
     looking: string;
     continue: boolean

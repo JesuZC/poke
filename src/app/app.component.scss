@@ -30,7 +30,7 @@ p {
     background-color: rgba(130, 236, 255, 0.616);
     display: flex;
     margin: 82px auto 32px;
-    margin-top: 8%;
+    margin-top: 9%;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
@@ -94,7 +94,7 @@ svg#clouds {
 
 @media screen and (max-width: 575px) {
     .content {
-        margin-top: 55%;
+        margin-top: 65%;
         position: inherit;
     }
     svg#rocket-smoke {
