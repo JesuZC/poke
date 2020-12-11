@@ -1,0 +1,22 @@
+<div *ngIf="item?.ischarged" class="gallery-card">
+    <div class="gallery-card-data">
+        <h3>name: </h3>
+        <h2>{{item?.name}}</h2>
+        <h3>id: </h3>
+        <h2>{{item?._id}}</h2>
+        <h3>types: </h3>
+        <div *ngFor="let type of item?.types">
+            <h2>{{type.type.name}}</h2>
+            <img src={{type?.type.url}} alt={{type?.type.name}} width=17% height=17%>
+        </div>
+    </div>
+    <dir class="gallery-card-images">
+        <div *ngFor="let img of item?.sprites">
+            <img [src]="img!">
+            <p *ngIf="img === null" style="color: rgb(236, 213, 109);"> No image avalible...</p>
+        </div>
+    </dir>
+    <dir class="gallery-card-options">
+        <button (click)="onLook()">Look</button><button (click)="onBeFree()">Be Free!!</button>
+    </dir>
+</div>

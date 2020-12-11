@@ -1,0 +1,96 @@
+<!-- Next Steps -->
+<div class="title-search">
+    <h2>Who's that pokemon?! </h2>
+    <img src="../../../assets/img/sys/pokeapi.svg" alt="">
+</div>
+<input type="hidden" #selection>
+
+<div class="card-container">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+        <span>Name</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'number'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+        <span>Number</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'type'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+        <span>Type</span>
+    </div>
+</div>
+
+<!-- Terminal -->
+<div class="terminal" [ngSwitch]="selection.value">
+    <h3>Look by: </h3>
+    <div class="card-container">
+        <form class="lookby" #useForm="ngForm" (ngSubmit)="onSubmitName()" *ngSwitchDefault>
+            <label for="nombre">Name </label>
+            <input type="text" class="form-control" [formControl]="nombre">
+            <div *ngIf="nombre!.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                <div *ngIf="nombre!.errors!.required">
+                    <p>Name is required.</p>
+                </div>
+                <div *ngIf="nombre!.errors!.minlength">
+                    <p>Name must be at least 4 characters long.</p>
+                </div>
+                <div *ngIf="nombre!.errors!.pattern">
+                    <p>Name must be at least no characters long.</p>
+                </div>
+            </div>
+            <!--             <small *ngIf="!nombre.valid && nombre.touched">
+              Please give me a pokemon name
+            </small>
+            <small *ngIf="nombre.errors?.pattern">
+              Pokemon name not valid, only letters.
+           </small> -->
+            <input type="submit" value="Chatch!!...">
+        </form>
+        <form class="lookby" #useForm="ngForm" (ngSubmit)="onSubmitID()" *ngSwitchCase="'number'">
+            <label for="number">Number</label>
+            <input type="number" name="number" #number="ngModel" [(ngModel)]="capture" required min="1" max="400">
+            <small *ngIf="!number.valid && number.touched">
+              <p>Please give me a pokemon ID integer number</p>
+            </small>
+            <input type="submit" value="Chatch!!...">
+        </form>
+        <form class="lookby" #useForm="ngForm" (ngSubmit)="onSubmitType()" *ngSwitchCase="'type'">
+            <label for="elmtType">Choose a Type:</label>
+            <select autocomplete="on" id="elmtType" name="elmtType" #elmtType="ngModel" [(ngModel)]="capture" required>
+              <option value=1>Normal </option>
+              <option value=2>Fighting </option>
+              <option value=3>Flying </option>
+              <option value=4>Poison</option>
+              <option value=5>Ground </option>
+              <option value=6>Rock </option>
+              <option value=7>Bug </option>
+              <option value=8>Ghost </option>
+              <option value=9>Steel </option>
+              <option value=10>Fire</option>
+              <option value=11>Water </option>
+              <option value=12>Grass</option>
+              <option value=13>Electric </option>
+              <option value=14>Psychic </option>
+              <option value=15>Ice </option>
+              <option value=16>Dragon</option>
+              <option value=17>Dark </option>
+              <option value=18>Fairy </option>
+          </select>
+            <small *ngIf="!elmtType!.valid && elmtType.touched">
+            <p>Please give me a pokemon Type</p>
+          </small>
+            <input type="submit" value="Chatch!!...">
+        </form>
+    </div>
+    <div class="card-container">
+
+        <app-load-one [name]="query" *ngSwitchDefault></app-load-one>
+        <app-load-one [number]="query" *ngSwitchCase="'number'"></app-load-one>
+        <app-load-various [type]="query" name="load-various" *ngSwitchCase="'type'"></app-load-various>
+    </div>
+</div>

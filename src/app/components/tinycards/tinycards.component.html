@@ -1,0 +1,13 @@
+<div class="tiny-card">
+    <dir class="tiny-card-options">
+        <h3>Pokemon: </h3>
+        <h2 style=" color:antiquewhite;">{{pokemon?.pokemon?.name}}</h2>
+        <button (click)="onLook()">Look</button><button (click)="onAddToGallery(pokemon?.pokemon?.name)">Capture</button>
+    </dir>
+    <div class="tiny-card-images">
+        <img [src]="pokemon?.pokemon?.front">
+        <img [src]="pokemon?.pokemon?.back">
+        <p *ngIf="pokemon?.pokemon?.front === null">No image avalible!!</p>
+    </div>
+    <hr>
+</div>

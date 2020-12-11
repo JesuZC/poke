@@ -1,0 +1,21 @@
+<div class="header">
+    <div class="app-logo">
+        <img src="../../../assets/img/sys/logoPokemon.png" class="logo" alt="logotipo">
+        <a href="#default" class="link" [routerLink]="['/']">PokeMex oh!</a>
+    </div>
+    <div class="header-right">
+        <nav>
+            <ul>
+                <li>
+                    <a [routerLink]="['/']" [routerLinkActive]="['active']">Search by...</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/gallery']" [routerLinkActive]="['active']">Gallery</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/profile']" [routerLinkActive]="['active']">Profile</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

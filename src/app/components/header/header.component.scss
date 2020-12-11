@@ -1,0 +1,103 @@
+.header {
+    top: 1%;
+    left: 1%;
+    width: 96.5%;
+    position: fixed;
+    border-radius: 5px;
+    /*     overflow: hidden; */
+    background-color: #ecbdff17;
+    padding: 20px 10px;
+    a {
+        float: left;
+        color: rgba(169, 238, 129, 0.877);
+        text-align: center;
+        margin-top: 12px;
+        padding: 10px;
+        background-color: rgba(253, 97, 193, 0.795);
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+        border-bottom-style: groove;
+        &:hover {
+            background-color: rgba(146, 20, 41, 0.842);
+        }
+    }
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline;
+    }
+}
+
+.app-logo {
+    img {
+        padding-left: 5%;
+        float: left;
+        display: block;
+        width: 6%;
+        height: auto;
+    }
+    svg {
+        display: block;
+        width: 10%;
+        height: auto;
+    }
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.active {
+    color: rgb(238, 44, 125);
+    background-color: rgb(255, 239, 151);
+}
+
+.header-right {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 8px;
+    padding-bottom: 1%;
+    float: right;
+    padding-right: 3%;
+    a {
+        align-self: center;
+        text-align: center;
+    }
+    .active {
+        color: rgb(238, 44, 125);
+        background-color: rgb(255, 239, 151);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        position: fixed;
+        margin-left: 0%;
+        margin-top: 0%;
+        background-color: rgba(253, 181, 238, 0.623);
+        a {
+            float: none;
+            display: flex;
+            text-align: left;
+        }
+        img {
+            float: none;
+            visibility: hidden;
+        }
+    }
+    .app-logo {
+        float: none;
+        display: flex;
+    }
+    .header-right {
+        float: none;
+    }
+}

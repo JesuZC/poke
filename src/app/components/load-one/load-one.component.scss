@@ -1,0 +1,119 @@
+.load-uno {
+    text-align: justify;
+    border-radius: 8px;
+    h2 {
+        color: antiquewhite;
+        text-align: center;
+    }
+    h3 {
+        color: rgb(228, 25, 25);
+        padding-left: 13%;
+    }
+    button {
+        align-self: center;
+        margin-left: 38%;
+        margin-bottom: 5%;
+    }
+    .imgType {
+        margin-left: 41%;
+    }
+}
+
+.one-type-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    margin-right: 0%;
+    h2 {
+        align-self: center;
+        float: left;
+    }
+    img {
+        align-self: center;
+        float: right;
+    }
+}
+
+.moves-scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    padding-left: 9%;
+    background-color: rgb(21, 22, 26);
+    width: 500px;
+    height: 160px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    border-radius: 8px;
+    h3 {
+        padding-left: 13%;
+        color: rgb(230, 27, 27);
+    }
+}
+
+.load-uno-images {
+    padding-top: 15%;
+    padding-left: 10%;
+    margin-left: 3%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    img {
+        float: left;
+        align-items: center;
+        align-content: center;
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .load-uno {
+        width: 90%;
+        position: inherit;
+        button {
+            margin-left: 33%;
+        }
+    }
+    .terminal {
+        padding-left: 2%;
+        width: 94%;
+        position: inherit;
+    }
+    .one-type-container {
+        margin-left: 11%;
+        width: 90%;
+    }
+    .moves-scroll {
+        margin-left: 11%;
+        align-self: auto;
+        width: auto;
+    }
+    .load-uno-images {
+        margin-left: 4%;
+        align-self: auto;
+        text-align: center;
+        width: auto;
+        height: auto;
+        img {
+            float: left;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        p {
+            padding-left: 9%;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+}
