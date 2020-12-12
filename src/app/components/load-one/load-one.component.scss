@@ -25,13 +25,24 @@
     align-items: center;
     margin: 2%;
     margin-right: 0%;
-    h2 {
-        align-self: center;
-        float: left;
-    }
-    img {
-        align-self: center;
-        float: right;
+    margin-left: 25%;
+    .type-logo {
+        display: grid;
+        grid-template-columns: auto auto;
+        h2 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            align-self: center;
+            float: left;
+        }
+        img {
+            padding-top: 5%;
+            height: 45%;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            align-self: center;
+            float: right;
+        }
     }
 }
 

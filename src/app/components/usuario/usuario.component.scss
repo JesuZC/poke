@@ -4,8 +4,8 @@
 
 .error-img {
     position: absolute;
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
 }
 
 .error-message {
@@ -24,8 +24,9 @@
         position: inherit;
     }
     .error-img {
+        margin-left: 8%;
         position: relative;
-        height: 10%;
-        width: 10%;
+        height: 90%;
+        width: 90%;
     }
 }
