@@ -4,6 +4,7 @@ Poke its an App for searching your favourite pokemons based on the opon source i
 ######This project was only made for academy purpouses only. All rights reserved to their propertiers.
 
 ## Features
+
 -Loking pokemons by name, numeric Id or type.
 -Add your favourite pokemons to our litle Gallery.
 
