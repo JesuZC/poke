@@ -102,3 +102,14 @@ svg#clouds {
         visibility: hidden;
     }
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    .content {
+        margin-top: 65%;
+        position: inherit;
+    }
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+}

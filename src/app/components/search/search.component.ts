@@ -41,6 +41,19 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.sub = this._route.params.subscribe(params => {
       if(typeof params.name !== 'undefined'){
+        if (params.name === null || params.name === '') {
+          alert("bring an pokemon name without special caracters");
+          return;
+
+        }
+        const val: any = /[^ \.A-Za-z0-9 \-]/g.test(params.name?.trim());
+        if (val){
+          this.nombre.setValue('');
+          this.query.looking = '';
+          this.query.continue = false;
+          alert('no special characters accepted');
+          return;
+        }
         this.query = {
           looking: params.name,
           continue: true

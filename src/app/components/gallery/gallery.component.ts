@@ -38,12 +38,20 @@ export class GalleryComponent implements OnInit {
     if (n > slides.length) {this.slideIndex = 1}
     if (n < 1) {this.slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
-        slides[i]!.style!.display = "none";
+      if (typeof slides[i].style !== 'undefined') {
+        slides[i].style.display = "none";
+      }
     }
     for (i = 0; i < dots.length; i++) {
+      if (typeof dots[i].className !== 'undefined') {
         dots[i].className = dots[i].className.replace(" active", "");
+      }
     }
-    slides[this.slideIndex-1]!.style!.display = "block";
-    dots[this.slideIndex-1]!.className! += " active";
+    if (typeof slides[this.slideIndex-1].style !== 'undefined') {
+      slides[this.slideIndex-1].style.display = "block";
+    }
+    if (typeof dots[this.slideIndex-1] !== 'undefined') {
+      dots[this.slideIndex-1].className += " active";
+    }
   }
 }

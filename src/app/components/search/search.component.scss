@@ -255,3 +255,19 @@ a:hover {
         visibility: hidden;
     }
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    .terminal {
+        padding-right: 3%;
+        width: 94%;
+        position: inherit;
+    }
+    .terminal::before {
+        width: 100%;
+        position: inherit;
+    }
+    svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+    }
+}

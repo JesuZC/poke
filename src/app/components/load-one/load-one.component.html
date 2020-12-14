@@ -8,7 +8,34 @@
             <h3>{{"Type "+(i+1)+": "}}</h3>
             <div class="one-type-container">
                 <h2>{{type?.type?.name}}</h2>
-                <img class="imgType" src={{type?.type.url}} alt={{type?.type.name}} width=12% height=12%>
+                <div class="type-logo" [ngSwitch]="type?.type?.name">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Pok%C3%A9mon_Normal_Type_Icon.svg/512px-Pok%C3%A9mon_Normal_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchDefault>
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pok%C3%A9mon_Water_Type_Icon.svg/512px-Pok%C3%A9mon_Water_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'water'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg/512px-Pok%C3%A9mon_Fire_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'fire'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Pok%C3%A9mon_Rock_Type_Icon.svg/512px-Pok%C3%A9mon_Rock_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'rock'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pok%C3%A9mon_Ground_Type_Icon.svg/512px-Pok%C3%A9mon_Ground_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'ground'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pok%C3%A9mon_Grass_Type_Icon.svg/512px-Pok%C3%A9mon_Grass_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'grass'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Pok%C3%A9mon_Bug_Type_Icon.svg/512px-Pok%C3%A9mon_Bug_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'bug'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Pok%C3%A9mon_Poison_Type_Icon.svg/512px-Pok%C3%A9mon_Poison_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'poison'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pok%C3%A9mon_Ghost_Type_Icon.svg/512px-Pok%C3%A9mon_Ghost_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'ghost'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Pok%C3%A9mon_Steel_Type_Icon.svg/512px-Pok%C3%A9mon_Steel_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'steel'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pok%C3%A9mon_Psychic_Type_Icon.svg/512px-Pok%C3%A9mon_Psychic_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'Psychic'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg/512px-Pok%C3%A9mon_Dark_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'dark'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Pok%C3%A9mon_Fighting_Type_Icon.svg/512px-Pok%C3%A9mon_Fighting_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'fighting'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pok%C3%A9mon_Flying_Type_Icon.svg/512px-Pok%C3%A9mon_Flying_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'flying'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pok%C3%A9mon_Dragon_Type_Icon.svg/512px-Pok%C3%A9mon_Dragon_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'dragon'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Pok%C3%A9mon_Ice_Type_Icon.svg/512px-Pok%C3%A9mon_Ice_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'ice'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pok%C3%A9mon_Fairy_Type_Icon.svg/512px-Pok%C3%A9mon_Fairy_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;" *ngSwitchCase="'fairy'">
+                    <img class="imgType" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/512px-Pok%C3%A9mon_Electric_Type_Icon.svg.png" alt={{type?.type?.name}} width=15% height=15% style=" float: right; padding-bottom: 5%;"
+                        *ngSwitchCase="'electric'">
+                </div>
             </div>
         </div>
         <h3>Weight: </h3>
